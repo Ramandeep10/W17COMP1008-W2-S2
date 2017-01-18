@@ -61,6 +61,10 @@ public class GameOfWar {
         Card p1Card=p1Hand.remove(0);
         Card p2Card=p1Hand.remove(0);
         
+        System.out.printf("Player1: %s cards in hand: %d", p1Card, p1Hand.size()+1);
+        System.out.printf("\tPlayer2: %s cards in hand: %d", p2Card, p2Hand.size()+1);
+        
+       
         //player 1's card is higher than player 2's crd
         if(p1Card.getFaceValue() > p2Card.getFaceValue())
         {
@@ -96,6 +100,7 @@ public class GameOfWar {
           p2Hand.addAll(p1Hand);
           p1Hand.clear();
           p2Hand.addAll(warPile);
+          return;
         }
         //check if player 2 had enough cards
         if(p1Hand.size()<3)
@@ -103,6 +108,7 @@ public class GameOfWar {
           p1Hand.addAll(p2Hand);
           p2Hand.clear();
           p1Hand.addAll(warPile);
+          return;
         }
         
         warPile.add(p1Hand.remove(0));
@@ -112,6 +118,10 @@ public class GameOfWar {
         
         Card p1Card = p1Hand.remove(0);
         Card p2Card = p2Hand.remove(0);
+        
+        System.out.printf("%n%n~~~~~~~WAR~~~~~~~~~%n");
+        System.out.printf("Player1: %s cards in hand: %d", p1Card, p1Hand.size()+1);
+        System.out.printf("\tPlayer2: %s cards in hand: %d", p2Card, p2Hand.size()+1);
         
         //if player 1 wins
         if(p1Card.getFaceValue()>p2Card.getFaceValue())
