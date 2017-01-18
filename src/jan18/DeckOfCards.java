@@ -6,6 +6,7 @@
 package jan18;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -28,5 +29,16 @@ public class DeckOfCards
                deck.add(newCard);
            }
        }
+   }
+   public void shuffle()
+   {
+       Collections.shuffle(deck);
+   }
+   public Card dealTheCard()
+   {
+       if(deck.isEmpty())
+           return null;
+       else
+           return deck.remove(0);
    }
 }
